@@ -123,11 +123,12 @@ This obviously needs further investigation, and in different substrates and cond
 
 Laying the radios is faster, and less work than laying Michie wire, but there need to be improvements to the user experience in doing so. 
 
-### Desired for next time
+### Improvements for next time
+HW
 - Need robust cases
-- Need more radios, 11 - 15 would be sufficient for the next exercise 
-- Need custom firmware - max hops > 10 
-- Need custom software (remove traceroute cooldown)
-- Need string etc to increase options for placements.
+- Need string and hanging options to increase placement opportunities
 - Hard ON/OFF Switch
-- reflectors & lights to help finding them all to come out. 
+- Reflectors & lights to help finding them all when clearing the cave.
+- Need more radios, 11 - 15 would be sufficient for the next exercise 
+- Need custom firmware, increase max hops to 20 or so, use sw to set to ~10
+- Need custom software, remove traceroute cooldown
