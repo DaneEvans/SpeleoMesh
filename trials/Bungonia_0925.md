@@ -72,13 +72,16 @@ The `DEtS` surface node was placed in the daylight hole in the doline below the 
 
 We were able to push the radios to lower signal strengths with more space, and straighter passage, but kept decent reliability down to ~-15dB.
 
-The failing node caused grief, as the current Meshtastic protocol is suceptible to a 'bad' radio retransmitting signals in ways that reduce the likelihood of getting a signal out. 
-We likely would have found this sooner had there been additional traffic from the surface, and certainly having the ability to turn off nodes would have made it more obvious, and solving it easier.
+The failing node caused grief, as the current Meshtastic protocol is suceptible to a 'bad' radio retransmitting signals in ways that reduce the likelihood of getting a signal out. We likely would have found this sooner had there been additional traffic from the surface, and certainly having the ability to turn off nodes would have made it more obvious, and solving it easier.
 
 >**Note**
+
 >Meshtastic encourages messages further into the mesh rather than bouncing around the same area by two means:
+
 >1 - A Node will not retransmit if it has already heard a retransmission from another node
->2 - The time to retransmission is inversly related to the strength of the recieved signal. 
+
+>2 - The time to retransmission is inversly related to the strength of the recieved signal.
+
 >This means that a poor antenna, that is within range of a good repeater may 'swallow' a message, and prevent it's transmission onto the next node. 
 
 ```
