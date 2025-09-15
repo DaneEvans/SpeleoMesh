@@ -76,9 +76,9 @@ The failing node caused grief, as the current Meshtastic protocol is suceptible 
 
 >**Note:**
 >Meshtastic encourages messages further into the mesh rather than bouncing around the same area by two means:
-> - 1 - A Node will not retransmit if it has already heard a retransmission from another node
-> - 2 - The time to retransmission is inversly related to the strength of the recieved signal.
->This means that a poor antenna, that is within range of a good repeater may 'swallow' a message, and prevent it's transmission onto the next node. 
+> - 1 A Node will not retransmit if it has already heard a retransmission from another node
+> - 2 The time to retransmission is inversly related to the strength of the recieved signal.
+> This means that a poor antenna, that is within range of a good repeater may 'swallow' a message, and prevent it's transmission onto the next node. 
 
 ```
 Traceroute to surface from 3 hops in (max hops in FW)
