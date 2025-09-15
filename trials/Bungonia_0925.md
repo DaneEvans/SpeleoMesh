@@ -78,7 +78,7 @@ The failing node caused grief, as the current Meshtastic protocol is suceptible 
 >Meshtastic encourages messages further into the mesh rather than bouncing around the same area by two means:
 > - 1 A Node will not retransmit if it has already heard a retransmission from another node
 > - 2 The time to retransmission is inversly related to the strength of the recieved signal.
-> This means that a poor antenna, that is within range of a good repeater may 'swallow' a message, and prevent it's transmission onto the next node. 
+> - This means that a poor antenna, that is within range of a good repeater may 'swallow' a message, and prevent it's transmission onto the next node. 
 
 ```
 Traceroute to surface from 3 hops in (max hops in FW)
@@ -104,6 +104,13 @@ Route traced back to us:
 
 Duration: 14.3 s
 ```
+
+### Conclusions:
+Performace remained better than LoS, laying radios was quite fast, but did involve an ammount of backtracking, and already knowing the cave layout helped. 
+- The ability to turn off radios will be important to remove under perforiming radios.
+- Durability of the current set is not adequate. 
+- Medium Fast as a preset allowed much faster traceroutes, and did not seem to perform much worse in caves. 
+- Signal thresholds were acceptable down to -15dB, even on Medium Fast. 
 
 ## Takeaways 
 The radios performed better than expected. They were substantially beyond pure line of site, which anyone that has done surveying will appreciate. Depending on the nature of the blockages to LoS, penetration varies greatly. 
