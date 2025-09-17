@@ -19,5 +19,7 @@ Lora (915 MHz) radios, currently using Meshtastic as a protocol.
 
 [Flamingo](https://github.com/rbreesems/flamingo?tab=readme-ov-file) - Hunstville, Alabama
 - Includes increased hop limits, and RS484 PHY links. 
+
+
 [Vangelis](https://github.com/semper-ad-fundum/vangelis) - UK
 - currently less active, but some reasonably extensive testing
