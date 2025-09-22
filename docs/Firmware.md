@@ -31,3 +31,13 @@ Flamingo uses Wisblock devices, and has added RS485 support which we don't plan 
 - Neighbour info on request
 - RGB light in response to rangetest packets.
     - I belive that the flamingo guys have plans for this too, but I can't find it now.
+
+
+## Testing
+
+Currently built on master on 22/09/25 - ahead of tag v2.7.9.70724be
+ - Range test and range test commands are working.
+ - range tests have rssi - and it appears on the display on display nodes.
+ - need to check hops, but it should work fine
+ - We're not going to use rs485, at least at this stage.
+ - BT seems a bit unstable on this particular version on the 114
