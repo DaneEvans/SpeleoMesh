@@ -1,4 +1,8 @@
 # SpeleoMesh
+NSW Cave Rescue, NSW Australia.
+
+## Purpose
+Replace the aging Michiephone systems for rescue communications.
 
 ## Technology
 
@@ -31,6 +35,7 @@ For relay nodes, the nRF kits are substantially cheaper, or more likely we spin 
 The Wio WM1110 module is a candidate.
 
 Requirements
+
 | Feature   |  Trunk    | Personal  |
 | ---       | ---       | ---       |
 | IP68      |  Y        | Y         |
@@ -41,7 +46,6 @@ Requirements
 | Man down button | desired | desired |
 | Range      |   200m LoS |   200m LoS |
 | Cost      |  50       |   50      |
-
 
 
 ### Firmware
@@ -64,3 +68,5 @@ It is currently set up with CI actions to keep it up to date with meshtastic/fir
 
 [Vangelis](https://github.com/semper-ad-fundum/vangelis) - UK
 - currently less active, but some reasonably extensive testing
+
+
