@@ -70,7 +70,3 @@ It is currently set up with CI actions to keep it up to date with meshtastic/fir
 - currently less active, but some reasonably extensive testing
 
 
-## Pages config
-Uses Jekyll. Hosted at https://daneevans.github.io/SpeleoMesh/docs/Firmware.html
-
-
