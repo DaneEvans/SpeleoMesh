@@ -35,7 +35,7 @@ Flamingo uses Wisblock devices, and has added RS485 support which we don't plan 
 
 ## Testing
 
-Currently built on **master** on 22/09/25 - ahead of tag v2.7.9.70724be
+Currently built on firmware/**master** on 22/09/25 - ahead of tag v2.7.9.70724be
 
 - Range test and range test commands are working.
 - range tests have rssi - and it appears on the display on display nodes.
@@ -46,3 +46,18 @@ Currently built on **master** on 22/09/25 - ahead of tag v2.7.9.70724be
 Moved back to the **2.7.9 tag**.
 
 - definitely seems better. May stay there barring major stability improvements.
+
+## Seeed Xiao BLE SENSE (not kit)
+- Seeed Xiao ble sense boards are incompatible with meshtastic beyond 2.6.10 - at least as the seeed xiao kit.
+
+Instead, we are building on 2.6.10 with FLAMINGO merged in at 07bb93907633cd3cdd8c23678e7492ca1abc8950 - beyond that needs the define of a pin for the buzzer, because it's not guarded, which needs to be rectified.
+
+
+## Pinned versions for October '25 exercise
+
+- Seeed Xiao Sense + SX1262  - 2.6.10 - tagged CRS_1025_2.6.10_nRF_sense - branch CRS_OCT_25_2.6.10
+- Seeed Xiao (non-sense) + SX1262 - 2.7.9 ...
+- All other architectures are based off 2.7.10, merging 'hopmod_2.6.11' at c1c68a333f728af433ed88b6e79723ba2f387261. Tag: CRS_1025_2.7.10
+- All firmwares are in ../firmware.
+
+Programming settings is done through a modified version of the programmer in the Flamingo repository. The config file will not be included, as it contains secrets.
