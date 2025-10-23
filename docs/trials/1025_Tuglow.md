@@ -10,7 +10,7 @@
 
 18/10/2025 - 1030 - 2030 
 
-[T1](./images/Tuglow_T1.jpg)
+![T1](./images/Tuglow_T1.jpg)
 
 18 radios available, on ShortFast, using Flamingo firmware, with max hops 32. 
 

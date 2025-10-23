@@ -10,8 +10,8 @@ Lora (915 MHz) radios, currently using Meshtastic as a protocol.
 
 ## Requirements
 - Durability
-- long life
-- reliability 
+- Long life
+- Reliability 
 
 
 ## Trials 
