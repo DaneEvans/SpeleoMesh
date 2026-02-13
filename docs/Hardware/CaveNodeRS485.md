@@ -1,6 +1,9 @@
-# CaveNode Basic
+# CaveNode RS485
 
-The simplest cave node, it's fitted with an 18650 for up to 7 days of battery. (likely with no LEDs)
+This is a specialised unit - used to overcome tight and winding passages, that would take too many radios to span practically - and when you don't *need* to have network access in the middle. 
+
+
+The simplest cave node, it's fitted with an 18650 for up to 6? days of battery. (likely with no LEDs)
 
 There are 2 LEDs to help with network management and laying the radios.
 A magnetic reed switch to turn them off
