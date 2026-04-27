@@ -24,14 +24,16 @@
           <style>
             /* layout */
             .header-nav{display:flex;align-items:center;gap:1rem;padding:0;margin:0;list-style:none}
-            /* reset any theme button/background on list items/links */
-            .header-nav li{background:transparent !important}
-            .header-nav a{background:transparent !important;color:#333 !important;padding:.15rem .25rem;border-radius:4px;text-decoration:none}
+            /* remove any theme-added backgrounds/borders */
+            .header-nav li{background:transparent !important;border:none !important;box-shadow:none !important}
+            /* neutral link styling; remove accidental theme colours */
+            .header-nav a{background:transparent !important;color:#222 !important;padding:.15rem .25rem;border-radius:4px;text-decoration:none;border:none !important;box-shadow:none !important}
             .header-nav a:hover{color:#000 !important;background:transparent !important}
-            .header-nav a:focus{outline:2px solid rgba(0,0,0,0.06);outline-offset:2px}
+            /* accessible focus using blue tint (not green) */
+            .header-nav a:focus{outline:3px solid rgba(11,61,145,0.18);outline-offset:2px}
             .header-nav .right{margin-left:auto}
             /* header buttons: enforce blue only for .btn and override theme styles */
-            #header .header-nav .btn{background:#0b3d91 !important;color:#fff !important;padding:.25rem .6rem;border-radius:5px;border:0}
+            #header .header-nav .btn{background:#0b3d91 !important;color:#fff !important;padding:.25rem .6rem;border-radius:5px;border:1px solid rgba(0,0,0,0.08) !important;box-shadow:none !important}
             #header .header-nav .btn:hover{background:#072a63 !important}
             /* ensure header background is neutral */
             #header{background:transparent !important}
