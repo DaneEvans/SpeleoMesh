@@ -3,7 +3,7 @@
 We have several different devices.
 
 ## CN Basic
-[CaveNode Basic[(../Hardware/CaveNodeBasic.md)
+[CaveNode Basic](../Hardware/CaveNodeBasic.md)
 
 This is the basic node, it's designed ground up for cave use. It's small, light, durable, and fully waterproof.
 It contains a magnetic switch to allow it to be turned off in the carry case.
