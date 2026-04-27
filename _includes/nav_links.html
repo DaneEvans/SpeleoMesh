@@ -12,7 +12,7 @@
   {% if parts.size > 1 %}
     {% assign parent_parts = parts | slice: 0, parts.size | minus: 1 %}
     {% assign parent_url = '/' | append: parent_parts | join: '/' | replace: '//','/' %}
-    {% unless parent_url endswith '/' %}{% assign parent_url = parent_url | append: '/' %}{% endunless %}
+    {% assign parent_url = parent_url | append: '/' | replace: '//','/' %}
   {% else %}
     {% assign parent_url = '/' %}
   {% endif %}
