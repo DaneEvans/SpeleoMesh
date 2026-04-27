@@ -48,30 +48,28 @@ Buttons
 1. Charging is complete when the red charging LED extinguishes.
 
 #### Use as a user device 
-1) Aquire the *Meshtastic* App from your app store
-2) Turn the device on by removing the battery clip
-3) Take note of the last 4 digits of the device ID
-4) Open the app
-5) follow the tutorial to pair the device (last 4 digits will help find it) using bluetooth (default code: 123456)
-6) You are now connected and can send / recieve messages
+1. Aquire the *Meshtastic* App from your app store
+2. Turn the device on by removing the battery clip
+3. Take note of the last 4 digits of the device ID
+4. Open the app
+5. follow the tutorial to pair the device (last 4 digits will help find it) using bluetooth (default code: 123456)
+6. You are now connected and can send / recieve messages
 
 #### Use as a repeater
 The ParaNode will automatically rebroadcast any meshtastic packets that match its preset. 
-
-1) Turn the device on by removing the clip
-
-2) Place the device in a suitable location
+1. Turn the device on by removing the clip
+2. Place the device in a suitable location
 
 ### Flashing firmware 
-1) Aquire firmware from [the Flamingo releases](https://github.com/DaneEvans/Flamingo-Firmware/releases)
+1. Aquire firmware from [the Flamingo releases](https://github.com/DaneEvans/Flamingo-Firmware/releases)
     - This board variant is currently known as the nswcrs, and has flamingo (cave) and regualar firware available. 
     - These releases may lag the official meshtastic releases, if this occurs please raise an issue in the repo.
-2) Go to the [meshtastic flasher](https://flasher.meshtastic.org/) 
-4) ensure the Node is plugged in
-5) Select your own firmware file (the one from 1 above) *(choose RAK4631 if you want stock firware and are prepared to alter pins for all peripherals.)*
-6) Press flash
-7) Press the 'Enter DFU Mode' button on the website, or press the reset button twice to enter it manually
-8) Flash the new firmware. 
+2. Go to the [meshtastic flasher](https://flasher.meshtastic.org/) 
+4. ensure the Node is plugged in
+5. Select your own firmware file (the one from 1 above) *(choose RAK4631 if you want stock firware and are prepared to alter pins for all peripherals.)*
+6. Press flash
+7. Press the 'Enter DFU Mode' button on the website, or press the reset button twice to enter it manually
+8. Flash the new firmware. 
 
 
 ## FAQ 
