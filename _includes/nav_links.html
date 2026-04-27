@@ -8,23 +8,26 @@
     .site-nav-links .nav-up{font-weight:600;margin-right:0.9rem}
   </style>
 
-  {% assign parts = page.url | split: '/' | reject: '' %}
-  {% if parts.size > 1 %}
-    {% assign parent_parts = parts | slice: 0, parts.size | minus: 1 %}
-    {% assign parent_url = '/' | append: parent_parts | join: '/' | replace: '//','/' %}
-    {% assign parent_url = parent_url | append: '/' | replace: '//','/' %}
-  {% else %}
-    {% assign parent_url = '/' %}
-  {% endif %}
+  {% comment %} Use page.dir for parent directory (provides a reliable trailing slash) {% endcomment %}
+  {% assign parent_url = page.dir | default: '/' %}
+  {% if parent_url == '' %}{% assign parent_url = '/' %}{% endif %}
+  {% assign parent_url = parent_url | replace: '//','/' %}
 
   {% comment %} Do not render nav on the site root/index page {% endcomment %}
   {% if parent_url != '/' %}
     {% assign parent_page = site.pages | where: "url", parent_url | first %}
     {% if parent_page and parent_page.title %}
-      <a class="nav-up" href="{{ parent_url | relative_url }}">{{ parent_page.title }}</a>
+      {% assign parent_label = parent_page.title %}
     {% else %}
-      <a class="nav-up" href="{{ parent_url | relative_url }}">Up</a>
+      {% assign parts_short = parent_url | split: '/' | reject: '' %}
+      {% assign last_seg = parts_short | last | default: '' %}
+      {% if last_seg != '' %}
+        {% assign parent_label = last_seg | replace: '-', ' ' | capitalize %}
+      {% else %}
+        {% assign parent_label = 'Up' %}
+      {% endif %}
     {% endif %}
+    <a class="nav-up" href="{{ parent_url | relative_url }}">{{ parent_label }}</a>
 
     {% assign prefix = parent_url %}
     {% assign prefix_len = prefix | size %}
