@@ -30,31 +30,22 @@ These are a little hard to see through the case, paricularly the green.
 
 - Charging 
 - Heartbeat 
-- RT 
-- Conn
 
 
 Buttons 
 - Reset 
 - User 
-- Duress (not yet available)
 
 ### Operation
 
 #### Turning On
-Remove the magnet clip from the device and store it separately.
-When the device turns on the RT and Conn LEDs will light up red, then green for 1 second (Flamingo FW) and the heartbeat LED will flash once per second while the device is on. 
 
 #### Turning Off
-Place the magnet clip on the device, aligning the keying marks. 
-The heartbeat LED will cease flashing. 
 
 #### Charging 
-1) Remove the top cap in a clean, dry environment.
-2) Ensure that the magnet clip has been removed.
-3) Plug the device in with a USB-C cable.
-4) The red charging light will be present while the device is charging, and extinguish when it is full. 
-5) reseal device carefully, if the device is not to be in use, replace the magnet clip. 
+1. Ensure the device is on
+2. Charge using the USB-C port
+1. Charging is complete when the red charging LED extinguishes.
 
 #### Use as a user device 
 1) Aquire the *Meshtastic* App from your app store
@@ -65,8 +56,10 @@ The heartbeat LED will cease flashing.
 6) You are now connected and can send / recieve messages
 
 #### Use as a repeater
-The CaveNode will automatically rebroadcast any meshtastic packets that match its preset. 
+The ParaNode will automatically rebroadcast any meshtastic packets that match its preset. 
+
 1) Turn the device on by removing the clip
+
 2) Place the device in a suitable location
 
 ### Flashing firmware 
@@ -89,9 +82,5 @@ https://github.com/DaneEvans/Flamingo-Firmware/releases
 On Android, Flamingo will report as a 'Custom' variant, and the Vanilla will report as 'Vanilla'.
 
 ### Why won't the battery charge
-Make sure that the magnet clip is off - it completely disconnects the battery to prevent discharging.
 
 ### Why won't the Node turn on / charge despite the clip being removed.
-The battery management circuit will disconnect the battery to prevent damage to the battery. In the event that this occurs, it is possible that it will not reconnect when the Node is placed on charge, and the red light will not come on. 
-
-If this occurs, place (2 seconds) and remove the magnet clip to reset the power to the management chip. 
