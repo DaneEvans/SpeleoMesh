@@ -22,6 +22,20 @@
       <div id="header">
         <nav>
           <ul>
+            <li class="home"><a href="{{ '/' | relative_url }}">Home</a></li>
+            {% comment %} dynamic section index links: any page with an `index.md` (excluding root) {% endcomment %}
+            {% for p in site.pages %}
+              {% if p.path and p.path != 'index.md' and p.path contains '/index.md' %}
+                {% if p.title %}
+                  <li class="section"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                {% else %}
+                  {% assign dir = p.path | replace: '/index.md', '' %}
+                  {% assign parts = dir | split: '/' %}
+                  {% assign label = parts | last | replace: '-', ' ' | capitalize %}
+                  <li class="section"><a href="{{ p.url | relative_url }}">{{ label }}</a></li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
             <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
             {% if site.show_downloads %}
               <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
