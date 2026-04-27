@@ -3,24 +3,33 @@
 We have several different devices.
 
 ## CN Basic
-[../Hardware/CaveNodeBasic.md]
+[CaveNode Basic](../Hardware/CaveNodeBasic.md)
+
 This is the basic node, it's designed ground up for cave use. It's small, light, durable, and fully waterproof.
-It contains a magnetic switch to allow it to be turned off in the case.
+It contains a magnetic switch to allow it to be turned off in the carry case.
 
 ## CN GPS
-[../Hardware/CaveNodeBasic.md]
+[CaveNode GPS](../Hardware/CaveNodeBasic.md)
+
 This is the Basic Node, but with an inbuilt GPS.
 
+## ParaNode
+[ParaNode](../Hardware/ParaNode.md)
+
+This is a simplified board with an inbuilt GPS chip - not recommended for underground use, but useful for Search and Rescue. 
+
+
 ## CN Logger
-[../Hardware/CaveNodeLogger.md]
+[CaveNode Logger](../Hardware/CaveNodeLogger.md)
+
 This is a specialised unit to log all network traffic to an SD card.
 
 ## CN Wired Link
-[../Hardware/CaveNodeRS485.md]
+[CaveNode Wired Link](../Hardware/CaveNodeRS485.md)
 
 This is a specialised unit. A pair of these can be used to drive a wire through up to 80m (tested) of dual core wiring. This is useful in tight, narrow and winding pasasges.
 
-## CN
+## CN PC
 This is a full fledged linux PC, it runs the web interface for surface control, and will chew batteries.
 
 ## Commercial devices
@@ -40,7 +49,7 @@ The issue is the battery life. As it's a small device, it's got about a 36 hour 
 This has a nifty control system, but is not even close to waterproof, and the screen makes it pretty power hungry.
 
 ### Heltec V3 
-Not waterproof - very power hungry. 
+Not waterproof - very power hungry, but it can talk direct to WiFi allowing use as a network node, or to move traffic to an MQTT server. 
 
 ### Heltec T114 
 Not waterproof, otherwise pretty good on a 103040 battery or equivalent.

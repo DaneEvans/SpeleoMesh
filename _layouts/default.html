@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {% include head-custom.html %}
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <style>
+            /* layout */
+            html, body{margin:0;padding:0}
+            nav{background:#2b2b2b !important;padding:0;margin:0;width:100%}
+            /* ensure header fills full width */
+            #header{background:#2b2b2b !important;padding:0;margin:0;width:100%}
+            .header-nav{display:flex;align-items:center;gap:1rem;padding:0 .5rem;margin:0;list-style:none;background:#2b2b2b !important;box-sizing:border-box}
+            /* remove any theme-added backgrounds/borders */
+            .header-nav li{background:transparent !important;border:none !important;box-shadow:none !important}
+            /* header links: white, bold on blue bar */
+            .header-nav a{background:transparent !important;color:#ffffff !important;padding:.15rem .25rem;border-radius:4px;text-decoration:none;border:none !important;box-shadow:none !important;font-weight:700}
+            .header-nav a:hover{color:#e6f0ff !important;background:transparent !important}
+            /* accessible focus using blue tint (not green) */
+            .header-nav a:focus{outline:3px solid rgba(11,61,145,0.18);outline-offset:2px}
+            .header-nav .right{margin-left:auto}
+            /* header buttons: blue buttons with white text */
+            #header .header-nav .btn{background:#0b3d91 !important;color:#ffffff !important;padding:.25rem .6rem;border-radius:5px;border:1px solid rgba(0,0,0,0.12) !important;box-shadow:none !important}
+            #header .header-nav .btn:hover{background:#174692 !important}
+            /* ensure header matches navbar background */
+            #header{background:#2b2b2b !important;padding:0;margin:0}
+            .header-nav{background:#2b2b2b !important;padding:0;margin:0}
+            .header-nav .section a{padding:.15rem .4rem}
+            .header-nav .home a{font-weight:600}
+          </style>
+          <ul class="header-nav">
+            <li class="home"><a href="{{ '/' | relative_url }}">Home</a></li>
+            {% comment %} dynamic section index links: any page with an `index.md` (excluding root) {% endcomment %}
+            {% for p in site.pages %}
+              {% if p.path and p.path != 'index.md' and p.path contains '/index.md' %}
+                {% if p.title %}
+                  <li class="section"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                {% else %}
+                  {% assign dir = p.path | replace: '/index.md', '' %}
+                  {% assign parts = dir | split: '/' %}
+                  {% assign label = parts | last | replace: '-', ' ' | capitalize %}
+                  <li class="section"><a href="{{ p.url | relative_url }}">{{ label }}</a></li>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            {% if site.show_downloads %}
+              <li class="downloads"><a class="btn" href="{{ site.github.zip_url }}">ZIP</a></li>
+              <li class="downloads"><a class="btn" href="{{ site.github.tar_url }}">TAR</a></li>
+            {% endif %}
+            <li class="fork right"><a class="btn" href="{{ site.github.repository_url }}">View On GitHub</a></li>
+          </ul>
+        </nav>
+        {%- comment -%} nav moved below title to avoid header clutter {%- endcomment -%}
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+        </div>
+
+        {% include nav_links.html %}
+
+        {{ content }}
+
+      </section>
+
+    </div>
+  </body>
+</html>
