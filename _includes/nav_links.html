@@ -1,0 +1,34 @@
+{% raw %}
+<nav class="site-nav-links" aria-label="Site navigation links">
+  <style>
+    .site-nav-links{margin:0 0 1rem;padding:.5rem 1rem;background:#0b0b0b;color:#fff}
+    .site-nav-links a{color:#9fe7ff;margin-right:1rem}
+    .site-nav-links ul{display:inline;margin:0;padding:0;list-style:none}
+    .site-nav-links li{display:inline;margin-right:.5rem}
+  </style>
+
+  {% assign parts = page.url | split: '/' | reject: '' %}
+  {% if parts.size > 1 %}
+    {% assign parent_parts = parts | slice: 0, parts.size | minus: 1 %}
+    {% assign parent_url = '/' | append: parent_parts | join: '/' | replace: '//','/' %}
+  {% else %}
+    {% assign parent_url = '/' %}
+  {% endif %}
+
+  <a class="nav-up" href="{{ parent_url | relative_url }}">Up</a>
+  <a class="nav-home" href="{{ '/' | relative_url }}">Home</a>
+
+  {% comment %} List sibling pages (same directory) {% endcomment %}
+  {% assign prefix = parent_url %}
+  {% assign prefix_len = prefix | size %}
+  <ul class="nav-siblings" aria-label="Sibling pages">
+    {% for p in site.pages %}
+      {% if p.url and p.url != page.url and p.url != prefix %}
+        {% if p.url | slice: 0, prefix_len == prefix %}
+          <li><a href="{{ p.url | relative_url }}">{{ p.title | default: p.url }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+{% endraw %}
