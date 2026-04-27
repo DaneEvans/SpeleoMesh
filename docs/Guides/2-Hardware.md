@@ -49,7 +49,7 @@ The issue is the battery life. As it's a small device, it's got about a 36 hour 
 This has a nifty control system, but is not even close to waterproof, and the screen makes it pretty power hungry.
 
 ### Heltec V3 
-Not waterproof - very power hungry. 
+Not waterproof - very power hungry, but it can talk direct to WiFi allowing use as a network node, or to move traffic to an MQTT server. 
 
 ### Heltec T114 
 Not waterproof, otherwise pretty good on a 103040 battery or equivalent.
