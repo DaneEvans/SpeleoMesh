@@ -23,21 +23,21 @@
         <nav>
           <style>
             /* layout */
-            .header-nav{display:flex;align-items:center;gap:1rem;padding:0;margin:0;list-style:none}
+            .header-nav{display:flex;align-items:center;gap:1rem;padding:0;margin:0;list-style:none;background:#2b2b2b !important}
             /* remove any theme-added backgrounds/borders */
             .header-nav li{background:transparent !important;border:none !important;box-shadow:none !important}
-            /* header links: blue, bold, no theme decorations */
-            .header-nav a{background:transparent !important;color:#0b3d91 !important;padding:.15rem .25rem;border-radius:4px;text-decoration:none;border:none !important;box-shadow:none !important;font-weight:700}
-            .header-nav a:hover{color:#072a63 !important;background:transparent !important}
+            /* header links: white, bold on blue bar */
+            .header-nav a{background:transparent !important;color:#ffffff !important;padding:.15rem .25rem;border-radius:4px;text-decoration:none;border:none !important;box-shadow:none !important;font-weight:700}
+            .header-nav a:hover{color:#e6f0ff !important;background:transparent !important}
             /* accessible focus using blue tint (not green) */
             .header-nav a:focus{outline:3px solid rgba(11,61,145,0.18);outline-offset:2px}
             .header-nav .right{margin-left:auto}
-            /* header buttons: enforce blue only for .btn and override theme styles */
-            #header .header-nav .btn{background:#0b3d91 !important;color:#fff !important;padding:.25rem .6rem;border-radius:5px;border:1px solid rgba(0,0,0,0.08) !important;box-shadow:none !important}
-            #header .header-nav .btn:hover{background:#072a63 !important}
+            /* header buttons: blue buttons with white text */
+            #header .header-nav .btn{background:#0b3d91 !important;color:#ffffff !important;padding:.25rem .6rem;border-radius:5px;border:1px solid rgba(0,0,0,0.12) !important;box-shadow:none !important}
+            #header .header-nav .btn:hover{background:#174692 !important}
             /* ensure header is transparent so it matches site background */
             #header{background:transparent !important;padding:0;margin:0}
-            .header-nav{background:transparent !important;padding:0;margin:0}
+            .header-nav{background:#2b2b2b !important;padding:0;margin:0}
             .header-nav .section a{padding:.15rem .4rem}
             .header-nav .home a{font-weight:600}
           </style>
