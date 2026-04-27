@@ -1,40 +1,48 @@
 <nav class="site-nav-links" aria-label="Up and sibling pages">
   <style>
-    .site-nav-links{margin:0 0 1rem;padding:0;font-size:0.95rem}
-    .site-nav-links a{color:inherit;margin-right:0.75rem;text-decoration:underline}
+    .site-nav-links{margin:0 0 1rem;padding:0;font-size:0.95rem;color:#333}
+    .site-nav-links a{color:#333;margin-right:0.6rem;text-decoration:none}
+    .site-nav-links a:hover{text-decoration:underline}
     .site-nav-links ul{display:inline;margin:0;padding:0;list-style:none}
     .site-nav-links li{display:inline;margin-right:0.5rem}
-    .site-nav-links .nav-up{font-weight:600}
+    .site-nav-links .nav-up{font-weight:600;margin-right:0.9rem}
   </style>
 
   {% assign parts = page.url | split: '/' | reject: '' %}
-  {% if parts.size > 0 %}
-    {% if parts.size > 1 %}
-      {% assign parent_parts = parts | slice: 0, parts.size | minus: 1 %}
-      {% assign parent_url = '/' | append: parent_parts | join: '/' | replace: '//','/' %}
-    {% else %}
-      {% assign parent_url = '/' %}
-    {% endif %}
+  {% if parts.size > 1 %}
+    {% assign parent_parts = parts | slice: 0, parts.size | minus: 1 %}
+    {% assign parent_url = '/' | append: parent_parts | join: '/' | replace: '//','/' %}
+    {% unless parent_url endswith '/' %}{% assign parent_url = parent_url | append: '/' %}{% endunless %}
   {% else %}
     {% assign parent_url = '/' %}
   {% endif %}
 
-  <a class="nav-up" href="{{ parent_url | relative_url }}">Up</a>
+  {% comment %} Do not render nav on the site root/index page {% endcomment %}
+  {% if parent_url != '/' %}
+    {% assign parent_page = site.pages | where: "url", parent_url | first %}
+    {% if parent_page and parent_page.title %}
+      <a class="nav-up" href="{{ parent_url | relative_url }}">{{ parent_page.title }}</a>
+    {% else %}
+      <a class="nav-up" href="{{ parent_url | relative_url }}">Up</a>
+    {% endif %}
 
-  {% comment %} List sibling pages (same directory) — only immediate siblings, exclude index-like root {% endcomment %}
-  {% assign prefix = parent_url %}
-  {% assign prefix_len = prefix | size %}
-  <ul class="nav-siblings" aria-label="Sibling pages">
-    {% assign shown = 0 %}
-    {% for p in site.pages %}
-      {% if p.url and p.url != page.url and p.url != '/' %}
-        {% assign p_prefix = p.url | slice: 0, prefix_len %}
-        {% if p_prefix == prefix %}
-          <li><a href="{{ p.url | relative_url }}">{{ p.title | default: p.url }}</a></li>
-          {% assign shown = shown | plus: 1 %}
-          {% if shown >= 30 %}{% break %}{% endif %}
+    {% assign prefix = parent_url %}
+    {% assign prefix_len = prefix | size %}
+    <ul class="nav-siblings" aria-label="Sibling pages">
+      {% assign shown = 0 %}
+      {% for p in site.pages %}
+        {% if p.url and p.url != page.url and p.url != '/' %}
+          {% assign p_prefix = p.url | slice: 0, prefix_len %}
+          {% if p_prefix == prefix %}
+            {% assign tail = p.url | slice: prefix_len, 999 %}
+            {% unless tail contains '/' %}
+              <li><a href="{{ p.url | relative_url }}">{{ p.title | default: p.url }}</a></li>
+              {% assign shown = shown | plus: 1 %}
+              {% if shown >= 50 %}{% break %}{% endif %}
+            {% endunless %}
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
+  {% endif %}
 </nav>
