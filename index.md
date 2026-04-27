@@ -23,20 +23,20 @@ Lora (915 MHz) radios, currently using Meshtastic as a protocol.
 
 ## Usage Guides
 
-1 - [Getting Started](docs\Guides\1-GettingStarted.md)
+1 - [Getting Started](docs/Guides/1-GettingStarted.md)
 
-2 - [Hardware](docs\Guides\2-Hardware.md)
+2 - [Hardware](docs/Guides/2-Hardware.md)
 
-3 - [Troubleshooting](docs\Guides\3-Troubleshooting.md)
+3 - [Troubleshooting](docs/Guides/3-Troubleshooting.md)
 
-4 - [Laying radios](docs\Guides\4-LayingRadios.md)
+4 - [Laying radios](docs/Guides/4-LayingRadios.md)
 
-5 - [Specialist Devices](docs\Guides\5-SpecialistDevices.md)
+5 - [Specialist Devices](docs/Guides/5-SpecialistDevices.md)
 
 ## Technical details
 
 ### Hardware
-[Custom Hardware](docs\Hardware\index.md)
+[Custom Hardware](docs/Hardware/index.md)
 I am currently trialling several different devices.
 Mostly nRF52 variants, for better battery life.
 

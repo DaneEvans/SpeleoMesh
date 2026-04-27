@@ -8,18 +8,23 @@
     .site-nav-links .nav-up{font-weight:600;margin-right:0.9rem}
   </style>
 
-  {% comment %} Use page.dir for parent directory (provides a reliable trailing slash) {% endcomment %}
-  {% assign parent_url = page.dir | default: '/' %}
-  {% if parent_url == '' %}{% assign parent_url = '/' %}{% endif %}
-  {% assign parent_url = parent_url | replace: '//','/' %}
+  {% comment %} Compute parent directory from the source `page.path` to avoid URL quirks {% endcomment %}
+  {% assign parts = page.path | split: '/' %}
+  {% assign last_index = parts | size | minus: 1 %}
+  {% if last_index > 0 %}
+    {% assign parent_parts = parts | slice: 0, last_index %}
+    {% assign parent_dir_path = parent_parts | join: '/' %}
+  {% else %}
+    {% assign parent_dir_path = '' %}
+  {% endif %}
 
-  {% comment %} Do not render nav on the site root/index page {% endcomment %}
-  {% if parent_url != '/' %}
-    {% assign parent_page = site.pages | where: "url", parent_url | first %}
+  {% if parent_dir_path != '' %}
+    {% assign index_path = parent_dir_path | append: '/index.md' %}
+    {% assign parent_page = site.pages | where: "path", index_path | first %}
     {% if parent_page and parent_page.title %}
       {% assign parent_label = parent_page.title %}
     {% else %}
-      {% assign parts_short = parent_url | split: '/' | reject: '' %}
+      {% assign parts_short = parent_dir_path | split: '/' | reject: '' %}
       {% assign last_seg = parts_short | last | default: '' %}
       {% if last_seg != '' %}
         {% assign parent_label = last_seg | replace: '-', ' ' | capitalize %}
@@ -27,22 +32,23 @@
         {% assign parent_label = 'Up' %}
       {% endif %}
     {% endif %}
+    {% assign parent_url = '/' | append: parent_dir_path | append: '/' | replace: '//','/' %}
     <a class="nav-up" href="{{ parent_url | relative_url }}">{{ parent_label }}</a>
 
-    {% assign prefix = parent_url %}
-    {% assign prefix_len = prefix | size %}
+    {% assign prefix = parent_dir_path | append: '/' %}
     <ul class="nav-siblings" aria-label="Sibling pages">
       {% assign shown = 0 %}
       {% for p in site.pages %}
-        {% if p.url and p.url != page.url and p.url != '/' %}
-          {% assign p_prefix = p.url | slice: 0, prefix_len %}
-          {% if p_prefix == prefix %}
-            {% assign tail = p.url | slice: prefix_len, 999 %}
-            {% unless tail contains '/' %}
+        {% if p.path and p.path != page.path and p.path contains prefix %}
+          {% assign tail = p.path | remove_first: prefix %}
+          {% if tail contains '/' %}
+            {% comment %} deeper file, skip {% endcomment %}
+          {% else %}
+            {% if tail != 'index.md' %}
               <li><a href="{{ p.url | relative_url }}">{{ p.title | default: p.url }}</a></li>
               {% assign shown = shown | plus: 1 %}
               {% if shown >= 50 %}{% break %}{% endif %}
-            {% endunless %}
+            {% endif %}
           {% endif %}
         {% endif %}
       {% endfor %}
