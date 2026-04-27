@@ -3,29 +3,29 @@
 We have several different devices.
 
 ## CN Basic
-(CaveNode Basic)[../Hardware/CaveNodeBasic.md]
+[CaveNode Basic[(../Hardware/CaveNodeBasic.md)
 
 This is the basic node, it's designed ground up for cave use. It's small, light, durable, and fully waterproof.
 It contains a magnetic switch to allow it to be turned off in the carry case.
 
 ## CN GPS
-(CaveNode GPS)[../Hardware/CaveNodeBasic.md]
+[CaveNode GPS](../Hardware/CaveNodeBasic.md)
 
 This is the Basic Node, but with an inbuilt GPS.
 
 ## ParaNode
-(ParaNode)[../Hardware/ParaNode.md]
+[ParaNode](../Hardware/ParaNode.md)
 
 This is a simplified board with an inbuilt GPS chip - not recommended for underground use, but useful for Search and Rescue. 
 
 
 ## CN Logger
-(CaveNode Logger)[../Hardware/CaveNodeLogger.md]
+[CaveNode Logger](../Hardware/CaveNodeLogger.md)
 
 This is a specialised unit to log all network traffic to an SD card.
 
 ## CN Wired Link
-(CaveNode Wired Link)[../Hardware/CaveNodeRS485.md]
+[CaveNode Wired Link](../Hardware/CaveNodeRS485.md)
 
 This is a specialised unit. A pair of these can be used to drive a wire through up to 80m (tested) of dual core wiring. This is useful in tight, narrow and winding pasasges.
 
