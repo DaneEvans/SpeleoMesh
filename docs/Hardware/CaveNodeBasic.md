@@ -39,11 +39,12 @@ These are a little hard to see through the case, paricularly the green.
 - Heartbeat 
 - RT 
 - Conn
+![CaveNode LEDs](./images/images/CaveNode_UI.png)
 
 
 Buttons 
 - Reset 
-- User 
+- User  (not available in IP68 cases, yet)
 - Duress (not yet available)
 
 ### Operation
