@@ -9,6 +9,8 @@ IP67 (non-rated, but tested)
 
 The typical variant is shipped with a very poor bluetooth antenna, and is typically only used for short range (~1m) use to change settings. 
 
+![CaveNode, internal antenna](./images/images/CaveNode.png)
+
 ## Variants
 ### Internal Antenna
 This is the most suitable for hostile environments. It likely has more blind spots, and less range, but by removing the additional breach in the case, we can reduce the possibilities for water ingress.
@@ -45,6 +47,7 @@ Buttons
 - Duress (not yet available)
 
 ### Operation
+![The magnet clip](./images/images/CaveNode_MagnetClip.png)
 
 #### Turning On
 Remove the magnet clip from the device and store it separately.
@@ -53,6 +56,9 @@ When the device turns on the RT and Conn LEDs will light up red, then green for 
 #### Turning Off
 Place the magnet clip on the device, aligning the keying marks. 
 The heartbeat LED will cease flashing. 
+![Node turned off](./images/images/CaveNode_Off.png)
+
+An alternative is to use a custom hardcase that can contain numerous devices, and which turns them off when they are in the case.
 
 #### Charging 
 1. Remove the top cap in a clean, dry environment.
